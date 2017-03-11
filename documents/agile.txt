@@ -7,3 +7,12 @@
 	"Fool me once, shame on you. Fool me twice, shame on me."
 	Using a "Data-Driven' Approach to Achieve Closure.
 	"Resisting premature abstraction is as importance as abstraction itself."
+
+#LSP (The Liskov Substitution Principle): 'Subtypes must be substitutable for their base types'
+	A violation of LSP is a latent violation of OCP.
+	A design is self-consistent is not necessarily consistent with all its users!
+	--The author of g assumed that changing the width of a Rectangle leaves its height unchanged.--
+	A model, viewed in isolation, can not be meaningfully validated.
+	The LSP makes it clear that in OOD, the IS-A relationship pertains to behavior that can be reasonably assumed and that clients depend on.
+	DBC: Design by Contract --> A routine redeclaration [in a derivative] may only replace the original precondition by one equal or weaker, and the original postcondition by one equal or stronger.
+	
