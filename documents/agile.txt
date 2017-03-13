@@ -15,4 +15,7 @@
 	A model, viewed in isolation, can not be meaningfully validated.
 	The LSP makes it clear that in OOD, the IS-A relationship pertains to behavior that can be reasonably assumed and that clients depend on.
 	DBC: Design by Contract --> A routine redeclaration [in a derivative] may only replace the original precondition by one equal or weaker, and the original postcondition by one equal or stronger.
-	
+
+#DIP (Dependency-Inversion Principle)
+	a. "High-level modules should not depend on low-level modules. Both should depend on abstractions."
+	b. "Abstraction shoud not depend on details. Details should depend on abstractions."
