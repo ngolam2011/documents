@@ -1,0 +1,110 @@
+# Help --> :help
+	#with topic--> :help <topic><TAB> --> ex: :help regex
+	#with keyworkd--> :helpgrep PATTERN
+		#next result--> :cnext OR :cnfile
+		#previous result--> :cprev OR :cpfile
+		# :helpgrep is a special case of :vimgrep /PATTERN/ FILES...
+		
+# Navigating help
+	# CTRL-] to jump to that topic
+	# CTRL-T to back out
+	# ZZ or :q to get out of help
+	
+# Increase your repertoire
+	:help normal-index
+	:help insert-index
+	
+# Learn to move
+
+	# h k l l
+	# where you are --> CTRL-G
+	# Word motions
+		# forward to the start of next word: w
+		# backwards to the start of the previous word: b
+		# forward to the end of the next word: e
+		# backwards to the end of previous word: ge
+	# Line and paragraph motions
+		start of the current line: 0
+		start of the first word of the current line: ^
+		end of current line: $
+		start of next line: <CR>
+		start of previous line: -
+		start of the current paragraph: {
+		end of the current paragraph: }
+	# Miscellaneous motions
+		top of the buffer: gg
+		end of the buffer: G
+		move to line N: <N>G or <N>gg
+		P percent: <P>%
+	# Matching delimiters
+		{...}, (...), or [...]: %
+		set matchpairs+=<:>,":",=:;
+	# Repeated motions
+		5l
+		3k
+		4}
+		
+# Control your insertion
+	CTRL-Y : duplicate what in the preceding line
+	CTRL-E: duplicate what in the following line
+	CTRL-A: inserts again what recent
+	CTRL-R= evaluates and insert value
+	CTRL-T : insert tab without moving point <> CTRL-D
+	CTRL-V : insert next character verbatim
+	CTRL-W : delete the word preceding the cursor
+	CTRL-O take you back to normal mode for one command
+	
+# Search smarter
+	\v\d+ = \d+
+	\vfoo|bar = foo|bar
+	/\vyear|ISBN : find year or ISBN
+	/.*Java\&.*line: Anything contain Java and anything contain line
+	/\<for\>: matches "for", but not "fortune" nor "wherefor"
+	*--> find next instance
+	#--> find the previous
+	:set ignorecsae --> ignore csae in search
+	:set smartcase
+	# Preview your search
+		:set incsearch
+		:set hlsearch
+# Search and replace
+	:-10,+33s/<pattern>/<replacement>   ________s: substitude
+		means: from 10 lines above the cursor to 33 lines below it
+	:-10;+33s/<pattern>/<replacement>
+		means: from 10 lines above the cursor for the following 33 lines
+		
+	In a range, . means the current line, $ means the last line
+		:.,$s/<pattern>/<replacement>
+		99: ~ :.,+98
+		:1,$s/<pattern>/<replacement> --> entire file ~ :%s/<pattern>/<replacement>
+		# Specify range according to their content
+			gg
+			:/<body>/,/<\/body>/s/<I>/<EM>/
+			/<pat>/ means: the next line that matchs <pat>
+			?<pat>? means: the previous line that matchs <pat>
+			
+			:?foo?+1,$-10s/<pattern>/<replacement>
+				means: go back the first line matches foo and 1, go forward to the end of file -10
+		To specify a substitution of every line... append the /g modifier
+			:s/<pattern>/<replacement>/g
+		To confirm for each replacement: /case
+			:%s/cat/feline/gc
+		To repeat the last substitution on another line
+			:s<CR> OR &
+			
+	# the :global command
+		don't want to apply a command to every line
+		just to those lines that match a certain pattern
+			:g /<pattern>/ <colon command>
+			:g /^\s/ :center
+			:g! /^\s/ :center --> opposite
+			:g /./:.;/^$/join -->join every paragraph into one line.
+			
+# Copy smarter
+	Copy some text, you "yank" it, y
+	copy a line: yy or Y
+	copy a word: yw
+	copy a paragraph: y}
+	copy to then end of line: y$
+	copy to the first occurrence of a specific pattern
+		y/__END__<CR>
