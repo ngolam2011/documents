@@ -19,3 +19,9 @@
 #DIP (Dependency-Inversion Principle)
 	a. "High-level modules should not depend on low-level modules. Both should depend on abstractions."
 	b. "Abstraction shoud not depend on details. Details should depend on abstractions."
+	# Depend on Abstractions
+		No variable should hold a pointer or reference to a concrete class.
+		No class should derive from concrete class.
+		No method should override an implemented method of any of its base classes.
+	Dependency-Inversion can be applied wherever one class sends a message to another.
+		Ex: Button object and the Lamp object
