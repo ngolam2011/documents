@@ -25,3 +25,6 @@
 		No method should override an implemented method of any of its base classes.
 	Dependency-Inversion can be applied wherever one class sends a message to another.
 		Ex: Button object and the Lamp object
+		
+#ISP (The interface-segregation principle)
+	
