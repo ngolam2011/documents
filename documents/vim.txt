@@ -108,3 +108,64 @@
 	copy to then end of line: y$
 	copy to the first occurrence of a specific pattern
 		y/__END__<CR>
+		
+# Undo
+	Undo the last buffer change:
+		u
+	CTRL-R: redo
+	
+	#Branched undo
+		g-
+		g+
+	# Earlier and Later
+		:earlier 10m
+		:later 30s
+# (Semi-)Infinite Undo
+
+# Complete your commands
+	q: -->show history command
+	q/ -->show history command
+	
+	:edit or :write CTRL-A --> show all, CTRL-N : next, CTRL-P
+	
+# Other forms of command completion
+	: --> TAB - complete valide ex command
+	shell command (after :!) <TAB> complete valid shell command
+	after a :set, TAB complete Vim option names ex: :set w
+	:map, TAB complete existing macro names
+	use % mean the current file path
+		:write %.bak
+	**: go down recursively
+# Complete your text too
+	CTRL-X
+	Omnicompletion
+		<CTRL-X><CTRL-O>
+	:help compl-omni-filetypes
+	Can install completion specifications for different languages
+		$VIMRUNTIME/autoload/<filetype>complete.vim
+	set up:
+		:filetype plugin on
+		or specific omnicompletion function directly
+			ex: set omnifunc=javascriptcomplete#CompleteJS
+	:help complete-functions
+	
+	
+	
+	
+	
+# Visual mode
+	type v and you're in it
+	# Visual-line mode: V
+	# Visual-block mode: <CTRL-V>
+	#gv reselect
+	
+	#Highlighting the cursor line and column
+		:set cursorline <> nocursorline
+		:set cursorcolumn <> nocursorcolumn 
+		
+# Automating folding
+
+	:syntax enable
+	:set foldmethod=syntax
+	
+	
